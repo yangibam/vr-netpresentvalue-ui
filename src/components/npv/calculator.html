@@ -1,0 +1,42 @@
+<template>    
+    <div class="card" style="width: 18rem; float: left;">
+        <div class="card-body">
+            <h4 class="card-title">net present value calculator</h4>
+            <div class="form-group">
+                <label>Investment</label>
+                <input type="text" class="form-control form-control-sm" value.bind="investment" />
+            </div>
+            <div class="form-group">
+                <label>Lower bound discount</label>
+                <input type="text" class="form-control form-control-sm" value.bind="lower"/>
+            </div>
+            <div class="form-group">
+                <label>Upper bound discount</label>
+                <input type="text" class="form-control form-control-sm" value.bind="upper"/>
+            </div>
+            <div class="form-group">
+                <label>Discount increment</label>
+                <input type="text" class="form-control form-control-sm" value.bind="increment"/>
+            </div>
+            <div class="form-group">
+                <label>Cash flows</label>
+                <span repeat.for="cashflow of cashflows">
+                    <input type="text" class="form-control form-control-sm" value.bind="cashflow.amount"/>
+                </span>                
+            </div>           
+            <button class="btn btn-default" click.trigger="addCashflow()">Add cash flow</button>
+            <button class="btn btn-default" click.trigger="calculate()">Calculate</button>
+        </div>
+    </div>
+    <div class="card" style="width: 50rem; float: right;">
+        <div class="card-body">
+            <h4 class="card-title">Result</h4>
+            <table class="table">
+                <tr repeat.for="result of results.npv">
+                    <td>${result.rate}</td>
+                    <td>${result.amount}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</template>
