@@ -19,5 +19,15 @@ export class Calculator {
     addCashflow() {
         this.cashflows.push({amount : 0});
     }
+
+    reset() {
+        this.investment = 0;
+        this.increment = 0;
+        this.lower = 0; 
+        this.upper = 0;
+        this.cashflows = [];
+        this.cashflows.push({amount : 0});
+        this.results = undefined;
+    }
 }
 
