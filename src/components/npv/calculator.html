@@ -36,13 +36,8 @@
     </div>
     <div class="card" style="width: 50rem; float: right;">
         <div class="card-body">
-            <h4 class="card-title">Result</h4>
-            <table class="table">
-                <tr repeat.for="result of results.npv">
-                    <td>${result.rate}</td>
-                    <td>${result.amount}</td>
-                </tr>
-            </table>
+            <h4 class="card-title">Result</h4>         
+            <canvas id="npvChart"></canvas>         
         </div>
     </div>
 </template>
